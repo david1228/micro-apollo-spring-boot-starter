@@ -16,9 +16,9 @@ Spring Cloud微服务项目在pom.xml中引入如下依赖：
 ```
 
 ##### 功能实现：<br/>
-对Spring Cloud配置刷新机制集成Apollo客户端做了进一步封装.
-1、在Apollo配置中心发布配置后，微服务应用客户端监听配置变更，包括默认的配置和公共的配置，通过ContextRefresher中的refresh()方法完成应用环境上下文的配置刷新。
-2、支持对日志级别和日志路径文件的动态配置变更。[Apollo Client无法很好的支持日志级别和日志路径文件的变更，因日志的LoggingApplicationListener加载优先级高，Apollo配置加载滞后。
+对Spring Cloud配置刷新机制集成Apollo客户端做了进一步封装. <br/>
+1、在Apollo配置中心发布配置后，微服务应用客户端监听配置变更，包括默认的配置和公共的配置，通过ContextRefresher中的refresh()方法完成应用环境上下文的配置刷新。<br/>
+2、支持对日志级别和日志路径文件的动态配置变更。[Apollo Client无法很好的支持日志级别和日志路径文件的变更，因日志的LoggingApplicationListener加载优先级高，Apollo配置加载滞后。<br/>
 
 引入micro-apollo-spring-boot-starter之后，如果你的项目使用了spring cloud config，那么可以将spring-cloud-stater-config依赖从pom.xml中去掉了。
 
