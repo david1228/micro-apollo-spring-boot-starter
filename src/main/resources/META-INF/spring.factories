@@ -1,0 +1,3 @@
+# Autoconfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.letv.micro.apollo.MicroApolloAutoConfiguration
