@@ -1,6 +1,6 @@
 # micro-apollo-spring-boot-starter
 
-> Spring boot版本使用1.5.10.RELEASE <br/>
+> Spring Boot版本使用1.5.10.RELEASE <br/>
 Spring Cloud版本使用Edgware.SR3
 
 下载该代码后通过maven命令打成jar包，上传到自己公司的私服。
