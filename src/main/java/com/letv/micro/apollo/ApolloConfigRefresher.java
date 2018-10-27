@@ -12,6 +12,8 @@ import com.google.common.base.Splitter;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.annotation.Annotation;
 import java.util.List;
 import java.util.Set;
@@ -38,8 +40,9 @@ public class ApolloConfigRefresher {
 
   private static final Splitter NAMESPACE_SPLITTER = Splitter.on(",").omitEmptyStrings().trimResults();
   private static final String APPLICATION = "application";
+  private static final String BASE_PACKGE_FILE = "META-INF/package";
+  private static final String BASE_PACKAGE = basePackage();
   private static final String APP_PATTERN = ".*\\.application{1}.*";
-  private static final String BASE_PACKAGE = "com.letv";
   private static final String RESOURCE_PATTERN = "/**/*.class";
 
   public ApolloConfigRefresher(ContextRefresher contextRefresher, ConfigurableEnvironment environment) {
@@ -108,4 +111,20 @@ public class ApolloConfigRefresher {
 
     log.info("Appolo config has been published. Keys refreshed [{}]", refreshKeys);
   }
+
+  private static String basePackage() {
+    StringBuffer result = new StringBuffer();
+    try {
+      InputStream in = ApolloConfigRefresher.class.getClassLoader().getResourceAsStream(BASE_PACKGE_FILE);
+      byte[] bytes = new byte[256];
+      int len = 0;
+      while ((len = in.read(bytes)) != -1) {
+        result.append(new String(bytes, 0, len));
+      }
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return result.toString();
+  }
+
 }
