@@ -3,7 +3,7 @@
 > Spring Boot版本使用1.5.10.RELEASE <br/>
 Spring Cloud版本使用Edgware.SR3
 
-1)下载该代码<br/>
+1)下载源码<br/>
 2)META-INF/package文件修改扫码工程包，默认是com.letv<br/>
 3)通过maven命令打成jar包，建议上传(deploy)到自己公司的私服
 
