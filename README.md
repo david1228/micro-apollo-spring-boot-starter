@@ -3,7 +3,9 @@
 > Spring Boot版本使用1.5.10.RELEASE <br/>
 Spring Cloud版本使用Edgware.SR3
 
-下载该代码后通过maven命令打成jar包，上传到自己公司的私服。
+1)下载该代码
+2)META-INF/package文件修改扫码工程包，默认是com.letv
+3)通过maven命令打成jar包，建议上传(deploy)到自己公司的私服
 
 ##### 使用方式：<br/>
 Spring Cloud微服务项目在pom.xml中引入如下依赖：
